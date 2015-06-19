@@ -1,0 +1,20 @@
+<div ng-controller="ColleaguesListCtrl">
+    <h2>ng template</h2>
+
+    <form class="form-group">
+        <div class="form-group">
+            <label>Name</label>
+            <input class="form-control" ng-model="colleague.name">
+        </div>
+        <button class="btn btn-default" ng-click="create(colleague)">Add colleague</button>
+    </form>
+
+    <ul>
+        <li ng-repeat="colleague in colleagues">
+            <a>{{colleague.name}} <strong>{{colleague.points}}</strong></a>
+            <button class="btn btn-primary btn-xs" ng-click="addPoint($index)">+1</button>
+            <button class="btn btn-danger btn-xs" ng-click="delete(colleague)">Remove</button>
+        </li>
+    </ul>
+    <button class="btn btn-danger btn-sm" ng-click="deleteAll()" ng-show="colleagues.length > 0">Add colleague</button>
+</div>
