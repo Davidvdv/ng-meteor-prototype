@@ -1,19 +1,16 @@
 Colleagues = new Mongo.Collection("colleagues");
 
 if (Meteor.isClient) {
-    // counter starts at 0
-    Session.setDefault('counter', 0);
-
-    Template.hello.helpers({
-        counter: function () {
-            return Session.get('counter');
+    Template.coll.helpers({
+        colleagues: function() {
+            return Colleagues.find();
         }
     });
 
-    Template.hello.events({
+    Template.coll.events({
         'click button': function () {
-            // increment the counter when button is clicked
-            Session.set('counter', Session.get('counter') + 1);
+            var increment = this.points + 1;
+            Colleagues.update(this._id, {$set: {points: increment}});
         }
     });
 }

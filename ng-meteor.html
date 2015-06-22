@@ -1,0 +1,27 @@
+<head>
+    <title>ng-meteor-prototype</title>
+</head>
+
+<body ng-app="ng-meteor">
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            <div ng-include="'ng-html/index.ng.html'"></div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+            {{> coll}}
+        </div>
+    </div>
+</div>
+</body>
+
+<template name="coll">
+    <h2>Meteor template</h2>
+
+    <p>This a Meteor template with some Meteor logic to control the collection shared by Angular.</p>
+    <ul>
+        {{#each colleagues}}
+            <li>{{name}} <strong>{{points}}</strong> <button class="btn btn-primary btn-xs">+1</button></li>
+        {{/each}}
+    </ul>
+</template>

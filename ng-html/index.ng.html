@@ -1,6 +1,7 @@
 <div ng-controller="ColleaguesListCtrl">
-    <h2>ng template</h2>
-
+    <h2>Angular template</h2>
+    <p>This a Angular template with some Angular logic to control the collection shared by Meteor.</p>
+    <p>Marley is always there, just add some more colleagues and give them points. ;)</p>
     <form class="form-group">
         <div class="form-group">
             <label>Name</label>
@@ -11,10 +12,10 @@
 
     <ul>
         <li ng-repeat="colleague in colleagues">
-            <a>{{colleague.name}} <strong>{{colleague.points}}</strong></a>
+            <span>{{colleague.name}} <strong>{{colleague.points}}</strong></span>
             <button class="btn btn-primary btn-xs" ng-click="addPoint($index)">+1</button>
             <button class="btn btn-danger btn-xs" ng-click="delete(colleague)">Remove</button>
         </li>
     </ul>
-    <button class="btn btn-danger btn-sm" ng-click="deleteAll()" ng-show="colleagues.length > 0">Add colleague</button>
+    <button class="btn btn-danger btn-sm" ng-click="deleteAll()" ng-show="colleagues.length > 0">Delete all</button>
 </div>

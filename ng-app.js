@@ -1,5 +1,5 @@
 if (Meteor.isClient) {
-    angular.module('ngme', ['angular-meteor'])
+    angular.module('ng-meteor', ['angular-meteor'])
         .controller('ColleaguesListCtrl', ['$meteor', '$scope', function ($meteor, $scope) {
             // Assign the meteor collection object to the scope
             $scope.colleagues = $meteor.collection(Colleagues);
